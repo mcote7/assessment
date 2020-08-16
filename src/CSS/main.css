@@ -13,7 +13,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   margin: 0rem;
   padding: 0rem;
   background-color: white!important;
@@ -70,7 +69,7 @@ p {
   padding-left: 1.5rem;
 }
 .myInput {
-  margin-top: 3rem;
+  margin-top: 1rem;
   width: 97%;
   border-top: none;
   border-left: none;
@@ -81,3 +80,7 @@ p {
   outline: none;
   border-bottom: 1px solid rgb(0,0,0);
 }
+.myInput::placeholder {
+  color: rgba(0,0,0,0.3);
+}
+

@@ -6,6 +6,7 @@ import Student from './Student';
 const Main = () => {
 
   const [result, setResult] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(()=> {
     axios.get(API_ENDPOINT)
@@ -17,9 +18,12 @@ const Main = () => {
 
   return (
     <div className="mainContainer">
-      <input type="text" className="myInput" placeholder="Search by name"/>
+      <input id="name-input" type="text" className="myInput" placeholder="Search by name"
+      onChange={(e)=>{setSearchQuery(e.target.value)}}/>
       <div className="studentList">
-        {result && result.map(res => <Student key={res.id} result={res}/>)}
+        {result && result.filter(res => res.firstName.concat(res.lastName).toLowerCase()
+        .includes(searchQuery.toLocaleLowerCase()))
+        .map(res => <Student key={res.id} result={res}/>)}
       </div>
     </div>
   );
