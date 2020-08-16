@@ -13,13 +13,13 @@ const Student = ({result}) => {
 
   return (
     <div className="studentContainer">
-      <div className="imageContainer">
+      <div className="imageContainer pt-3">
         <img src={result.pic} alt="img" className="rounded-circle studentImage"/>
       </div>
       <div className="col mainCol">
         <div className="title">
           <h1>{`${result.firstName.toUpperCase()} ${result.lastName.toUpperCase()}`}</h1>
-          <button className="myButton" onClick={handleClick}>
+          <button id="expand-btn" className="myButton" onClick={handleClick}>
           <span className="icon"><i class={`${button} fa-2x`} aria-hidden="true"></i></span></button>
         </div>
         <div className="details">

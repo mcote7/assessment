@@ -50,7 +50,6 @@
   padding-bottom: 0.5rem;
   text-align: left;
   display: flex;
-  align-items: center;
   justify-content: center;
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
@@ -110,8 +109,6 @@ h1 {
   outline: none;
 }
 .icon {
-  /* font-size: 2.5rem; */
-  /* font-weight: 900; */
   color: rgba(0,0,0,0.25);
 }
 .icon:hover {
