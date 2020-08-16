@@ -1,0 +1,52 @@
+.appContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(242, 242, 242);
+  border-bottom: 5px solid rgb(202, 202, 202);
+}
+.mainContainer {
+  height: 80vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0rem;
+  padding: 0rem;
+  background-color: white!important;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 4px 6px rgba(0,0,0,.25)!important;
+  border-radius: 0.25rem!important;
+  overflow-y: scroll;
+}
+.mainContainer::-webkit-scrollbar {
+  width: 5px;
+}
+.mainContainer::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+.mainContainer::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+.mainContainer::-webkit-scrollbar-corner {
+  display: none;
+}
+.studentList {
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+  height: 100%;
+}
+/* ------------------------------------------------------- */
+
+.studentContainer {
+  height: 22vh;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
