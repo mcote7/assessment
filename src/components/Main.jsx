@@ -21,8 +21,6 @@ const Main = () => {
     setTagSearchQuery(e.target.value);
   };
 
-  const allTags = document.getElementsByClassName("myBadge").value;
-  console.log("xxx", allTags);
 
   return (
     <div className="mainContainer">
