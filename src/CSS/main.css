@@ -114,3 +114,18 @@ h1 {
 .icon:hover {
   color: black;
 }
+.myTagInput {
+  margin-top: 1rem;
+  width: 30%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(0,0,0,.15);
+}
+.myTagInput:focus {
+  outline: none;
+  border-bottom: 1px solid rgb(0,0,0);
+}
+.myTagInput::placeholder {
+  color: rgba(0,0,0,0.3);
+}

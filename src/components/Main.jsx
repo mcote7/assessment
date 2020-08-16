@@ -20,6 +20,8 @@ const Main = () => {
     <div className="mainContainer">
       <input id="name-input" type="text" className="myInput" placeholder="Search by name"
       onChange={(e)=>{setSearchQuery(e.target.value)}}/>
+      <input id="tag-input" type="text" className="myInput" placeholder="Search by tag"
+      onChange={(e)=>{}}/>
       <div className="studentList">
         {result && result.filter(res => res.firstName.concat(res.lastName).toLowerCase()
         .includes(searchQuery.toLocaleLowerCase()))
