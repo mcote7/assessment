@@ -3,7 +3,6 @@ import axios from 'axios';
 import API_ENDPOINT from '../config/apiEndpoint';
 import Student from './Student';
 
-
 const Main = () => {
 
   const [result, setResult] = useState("");
@@ -11,14 +10,14 @@ const Main = () => {
   useEffect(()=> {
     axios.get(API_ENDPOINT)
     .then(res => {
-      console.log("response",res.data)
+      console.log("response",res.data.students)
       setResult(res.data.students)})
     .catch(err => console.log(err))
   }, []);
 
   return (
-    
     <div className="mainContainer">
+      <input type="text" className="myInput" placeholder="Search by name"/>
       <div className="studentList">
         {result && result.map(res => <Student key={res.id} result={res}/>)}
       </div>
