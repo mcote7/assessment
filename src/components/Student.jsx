@@ -5,7 +5,7 @@ const Student = ({result}) => {
 
   const [button, setButton] = useState("fa fa-plus");
   const [details, setDetails] = useState(false);
-  const [tags, setTags] = useState(["tag 1", "tag 2"]);
+  const [tags, setTags] = useState([]);
 
   const handleClick = () => {
     button === "fa fa-plus" ? setButton('fa fa-minus') : setButton('fa fa-plus');
