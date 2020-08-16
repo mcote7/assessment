@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import _ from 'lodash';
 
-const Student = ({result}) => {
+const Student = ({result, inputId}) => {
 
   const [button, setButton] = useState("fa fa-plus");
   const [details, setDetails] = useState(false);
@@ -14,10 +14,10 @@ const Student = ({result}) => {
 
   const handleTags = (e) => {
     e.preventDefault();
-    let input = document.getElementById("add-tag-input");
-    let text = document.getElementById("add-tag-input").value;
+    let input = document.getElementById(`${inputId}`);
+    let text = document.getElementById(`${inputId}`).value;
     const myTags = [...tags];
-    // console.log("input value:", text);
+    console.log("input value:", input);
     if(text !== "") {
       myTags.push(text);
       setTags(myTags);
@@ -49,7 +49,7 @@ const Student = ({result}) => {
           {details ? tags.map((tag, i)=> <p className="myBadge mt-2 mr-2 px-2 py-1" key={i}>{tag}</p>):''}
           {details ?
           <form onSubmit={(e)=> handleTags(e)}>
-            <input id="add-tag-input" type="text" className="myTagInput" placeholder="Add a tag"/>
+            <input id={inputId} type="text" className="myTagInput" placeholder="Add a tag"/>
           </form>
           :''}
         </div>

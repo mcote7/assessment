@@ -10,6 +10,8 @@ const Main = () => {
   
   const [tagSearchQuery, setTagSearchQuery] = useState("");
 
+  let inputId = 1;
+
   useEffect(()=> {
     axios.get(API_ENDPOINT)
     .then(res => {
@@ -31,7 +33,7 @@ const Main = () => {
 
         {result && result.filter(res => res.firstName.concat(res.lastName).toLowerCase()
         .includes(searchQuery.toLocaleLowerCase()))
-        .map(res => <Student key={res.id} result={res}/>)}
+        .map(res => <Student key={res.id} result={res} inputId={inputId++}/>)}
 
         {/* {result && result.filter(res => res.firstName.concat(res.lastName).toLowerCase()
         .includes(searchQuery.toLocaleLowerCase()))
