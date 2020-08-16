@@ -19,6 +19,7 @@
   box-shadow: 0 0 0 1px rgba(0,0,0,.15), 0 4px 6px rgba(0,0,0,.25)!important;
   border-radius: 0.25rem!important;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 .mainContainer::-webkit-scrollbar {
   width: 5px;
@@ -43,10 +44,14 @@
 /* -----------student component------------ */
 
 .studentContainer {
-  height: 23vh;
+  height: auto;
   width: 100%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   text-align: left;
   display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 .imageContainer {
@@ -61,6 +66,10 @@
   border: solid 1px rgba(0,0,0,0.25);
 }
 p {
+  margin: 0%!important;
+  padding: 0%!important;
+}
+h1 {
   margin: 0%!important;
   padding: 0%!important;
 }
@@ -83,4 +92,28 @@ p {
 .myInput::placeholder {
   color: rgba(0,0,0,0.3);
 }
-
+.mainCol {
+  padding-left: 0%!important;
+}
+.title {
+  display: flex;
+}
+.myButton {
+  margin: 0%;
+  padding: 0%;
+  background-color: white;
+  border: none;
+  margin-left: auto;
+  transform: rotate(180deg);
+}
+.myButton:focus {
+  outline: none;
+}
+.icon {
+  /* font-size: 2.5rem; */
+  /* font-weight: 900; */
+  color: rgba(0,0,0,0.25);
+}
+.icon:hover {
+  color: black;
+}
