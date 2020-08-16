@@ -11,7 +11,7 @@ const Main = () => {
   useEffect(()=> {
     axios.get(API_ENDPOINT)
     .then(res => {
-      console.log("response",res.data.students)
+      // console.log("response",res.data.students)
       setResult(res.data.students)})
     .catch(err => console.log(err))
   }, []);

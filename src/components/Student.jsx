@@ -14,10 +14,12 @@ const Student = ({result}) => {
 
   const handleTags = (e) => {
     e.preventDefault();
+    let input = document.getElementById("add-tag-input");
     const text = document.getElementById("add-tag-input").value;
-    console.log("e", text);
+    console.log("input value:", text);
     setTags(e.target.value);
-    console.log("setTags",tags);
+    console.log("set tags:", tags);
+    input.value = '';
   }
 
   return (
@@ -38,7 +40,7 @@ const Student = ({result}) => {
           <p className="mb-3">{`Average: ${_.mean(result.grades.map(ea => +ea)).toFixed(2)}%`}</p>
           {details && result.grades.map((g, idx) => 
           <p key={idx}>{`Test: ${g}%`}</p>)}
-          {tags ? console.log("tags", tags):''}
+          {/* {tags ? console.log("tags", tags):''} */}
           {details ?
             <form onSubmit={(e)=> handleTags(e)}>
               <input id="add-tag-input" type="text" className="myTagInput" placeholder="Add a tag"/>
