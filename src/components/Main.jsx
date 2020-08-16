@@ -5,12 +5,11 @@ import Student from './Student';
 
 const Main = () => {
 
+  let inputId = 1;
+
   const [result, setResult] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-  
   const [tagSearchQuery, setTagSearchQuery] = useState("");
-
-  let inputId = 1;
 
   useEffect(()=> {
     axios.get(API_ENDPOINT)
@@ -20,6 +19,7 @@ const Main = () => {
   }, []);
 
   const handleTagSearch = (e) => {
+    console.log("tag search val", e.target.value);
     setTagSearchQuery(e.target.value);
   };
 
@@ -35,9 +35,12 @@ const Main = () => {
         .includes(searchQuery.toLocaleLowerCase()))
         .map(res => <Student key={res.id} result={res} inputId={inputId++}/>)}
 
+
         {/* {result && result.filter(res => res.firstName.concat(res.lastName).toLowerCase()
         .includes(searchQuery.toLocaleLowerCase()))
-        .map(res => <Student key={res.id} result={res}/>)} */}
+        .map(res => <Student key={res.id} result={res} inputId={inputId++}/>)} */}
+
+
       </div>
     </div>
   );

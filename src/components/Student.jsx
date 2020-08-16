@@ -17,13 +17,10 @@ const Student = ({result, inputId}) => {
     let input = document.getElementById(`${inputId}`);
     let text = document.getElementById(`${inputId}`).value;
     const myTags = [...tags];
-    console.log("input value:", input);
     if(text !== "") {
       myTags.push(text);
       setTags(myTags);
       input.value = '';
-      // console.log("set tags:", tags);
-      // console.log("my tags:", myTags);
     }
     input.value = '';
   };
@@ -57,5 +54,4 @@ const Student = ({result, inputId}) => {
     </div>
   );
 }
-
 export default Student;
