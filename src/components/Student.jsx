@@ -5,22 +5,28 @@ const Student = ({result}) => {
 
   const [button, setButton] = useState("fa fa-plus");
   const [details, setDetails] = useState(false);
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState(["tag 1", "tag 2"]);
 
   const handleClick = () => {
     button === "fa fa-plus" ? setButton('fa fa-minus') : setButton('fa fa-plus');
     !details ? setDetails(true) : setDetails(false);
-  }
+  };
 
   const handleTags = (e) => {
     e.preventDefault();
     let input = document.getElementById("add-tag-input");
-    const text = document.getElementById("add-tag-input").value;
-    console.log("input value:", text);
-    setTags(e.target.value);
-    console.log("set tags:", tags);
+    let text = document.getElementById("add-tag-input").value;
+    const myTags = [...tags];
+    // console.log("input value:", text);
+    if(text !== "" && !myTags.includes(text)) {
+      myTags.push(text);
+      setTags(myTags);
+      input.value = '';
+      // console.log("set tags:", tags);
+      // console.log("my tags:", myTags);
+    }
     input.value = '';
-  }
+  };
 
   return (
     <div className="studentContainer">
@@ -39,13 +45,13 @@ const Student = ({result}) => {
           <p>{`Skill: ${result.skill}`}</p>
           <p className="mb-3">{`Average: ${_.mean(result.grades.map(ea => +ea)).toFixed(2)}%`}</p>
           {details && result.grades.map((g, idx) => 
-          <p key={idx}>{`Test: ${g}%`}</p>)}
-          {/* {tags ? console.log("tags", tags):''} */}
+            <p key={idx}>{`Test: ${g}%`}</p>)}
+          {details ? tags.map((tag, i)=> <p className="myBadge mt-2 mr-2 px-2 py-1" key={i}>{tag}</p>):''}
           {details ?
-            <form onSubmit={(e)=> handleTags(e)}>
-              <input id="add-tag-input" type="text" className="myTagInput" placeholder="Add a tag"/>
-            </form>
-            :''}
+          <form onSubmit={(e)=> handleTags(e)}>
+            <input id="add-tag-input" type="text" className="myTagInput" placeholder="Add a tag"/>
+          </form>
+          :''}
         </div>
       </div>
     </div>
