@@ -21,7 +21,6 @@ const Main = () => {
     setTagSearchQuery(e.target.value);
   };
 
-
   return (
     <div className="mainContainer">
       <input id="name-input" type="text" className="myInput" placeholder="Search by name"

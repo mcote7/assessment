@@ -18,7 +18,7 @@ const Student = ({result}) => {
     let text = document.getElementById("add-tag-input").value;
     const myTags = [...tags];
     // console.log("input value:", text);
-    if(text !== "" && !myTags.includes(text)) {
+    if(text !== "") {
       myTags.push(text);
       setTags(myTags);
       input.value = '';
