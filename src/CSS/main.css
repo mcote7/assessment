@@ -146,3 +146,14 @@ input:-webkit-autofill:active {
 .messageLoaderWrapper {
   display: inline-flex;
 }
+/*  */
+.tagIcon {
+  transform: rotate(46deg);
+  transition: 0.2s;
+  color: rgb(0, 0, 0, 0.3);
+}
+.tagIcon:hover {
+  transform: rotate(138deg);
+  cursor: pointer;
+  color: black;
+}

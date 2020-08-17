@@ -44,6 +44,19 @@ const Student = ({result, inputId, tagSearchQuery}) => {
     input.value = '';
   };
 
+  const handleDelete = (e) => {
+    // const myTags = [...tags];
+    // const innerText = e.currentTarget.parentNode.textContent;
+    // console.log("myTags:", myTags);
+    // console.log("innerText:",innerText);
+    // if(myTags.toString().includes(innerText)) {
+    //   let newTags = [];
+    //   newTags = myTags.toString().filter(t=>t !== myTags.includes(innerText))
+    //   console.log("result:", newTags);
+    // } 
+    // e.currentTarget.parentNode.remove();
+  };
+
   if(searching && !match) return null;
   if((searching && match)||(!searching && !match)) {
   return (
@@ -69,7 +82,9 @@ const Student = ({result, inputId, tagSearchQuery}) => {
           {details && result.grades.map((g, idx) =>
           <p key={idx}>{`Test: ${g}%`}</p>)}
 
-          {details ? tags.map((tag, i)=> <p className="myBadge mt-2 mr-2 px-2 py-1" key={i}>{tag}</p>):''}
+          {details ? tags.map((tag, i)=> <p className="myBadge mt-2 mr-2 px-2 py-1" key={i}>{tag}&nbsp;&nbsp;
+          {/* check delete */}
+          <span onClick={(e) => handleDelete(e)} className="deleteBtn"><i className="fa fa-plus tagIcon" aria-hidden="true"></i></span></p>):''}
 
           {details ?
           <form onSubmit={(e)=> handleTags(e)}>
