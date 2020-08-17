@@ -10,11 +10,13 @@ const Student = ({result, inputId, tagSearchQuery}) => {
   const [match, setMatch] = useState(false);
 
   useEffect(()=>{
-    if(tagSearchQuery && tags.toString().toLocaleLowerCase().includes(tagSearchQuery.toString().toLowerCase())) {
+    if(tagSearchQuery && tags.toString().toLocaleLowerCase()
+    .includes(tagSearchQuery.toString().toLowerCase())) {
       setSearching(true);
       setMatch(true);
     }
-    if(tagSearchQuery && !tags.toString().toLocaleLowerCase().includes(tagSearchQuery.toString().toLowerCase())) {
+    if(tagSearchQuery && !tags.toString().toLocaleLowerCase()
+    .includes(tagSearchQuery.toString().toLowerCase())) {
       setSearching(true);
       setMatch(false);
     }
@@ -42,9 +44,6 @@ const Student = ({result, inputId, tagSearchQuery}) => {
     input.value = '';
   };
 
-  console.log("current tags:", tags)
-  console.log("search Q:", tagSearchQuery)
-
   if(searching && !match) return null;
   if((searching && match)||(!searching && !match)) {
   return (
@@ -53,27 +52,34 @@ const Student = ({result, inputId, tagSearchQuery}) => {
         <img src={result.pic} alt="img" className="rounded-circle studentImage"/>
       </div>
       <div className="col mainCol">
+
         <div className="title">
           <h1>{`${result.firstName.toUpperCase()} ${result.lastName.toUpperCase()}`}</h1>
           <button id="expand-btn" className="myButton" onClick={handleClick}>
           <span className="icon"><i className={`${button} fa-2x`} aria-hidden="true"></i></span></button>
         </div>
+
         <div className="details">
           <p>{`Email: ${result.email}`}</p>
           <p>{`Company: ${result.company}`}</p>
           <p>{`Skill: ${result.skill}`}</p>
+
           <p className="mb-3">{`Average: ${_.mean(result.grades.map(ea => +ea)).toFixed(2)}%`}</p>
-          {details && result.grades.map((g, idx) => 
-            <p key={idx}>{`Test: ${g}%`}</p>)}
+
+          {details && result.grades.map((g, idx) =>
+          <p key={idx}>{`Test: ${g}%`}</p>)}
+
           {details ? tags.map((tag, i)=> <p className="myBadge mt-2 mr-2 px-2 py-1" key={i}>{tag}</p>):''}
+
           {details ?
           <form onSubmit={(e)=> handleTags(e)}>
             <input id={inputId} type="text" className="myTagInput" placeholder="Add a tag"/>
           </form>
           :''}
+
         </div>
       </div>
     </div>
   );}
-}
+};
 export default Student;

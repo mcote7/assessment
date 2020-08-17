@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
 import API_ENDPOINT from '../config/apiEndpoint';
 import Student from './Student';
 import Loading from './Loading';
@@ -26,15 +27,19 @@ const Main = () => {
 
   return (
     <div className="mainContainer">
+
       <input id="name-input" type="text" className="myInput" placeholder="Search by name"
       onChange={(e)=>{setSearchQuery(e.target.value)}}/>
       <input id="tag-input" type="text" className="myInput" placeholder="Search by tag"
       onChange={(e)=>{setTagSearchQuery(e.target.value)}}/>
+
       <div className="studentList">
+
         {loading ? <Loading loading={loading}/> :
         result && result.filter(res => res.firstName.concat(res.lastName).toLowerCase()
         .includes(searchQuery.toLocaleLowerCase()))
         .map(res => <Student key={res.id} result={res} inputId={inputId++} tagSearchQuery={tagSearchQuery}/>)}
+
       </div>
     </div>
   );
