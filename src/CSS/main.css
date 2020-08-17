@@ -142,3 +142,6 @@ input:-webkit-autofill:active {
   width: fit-content;
   border-radius: 0.25rem;
 }
+.messageLoaderWrapper {
+  display: inline-flex;
+}
