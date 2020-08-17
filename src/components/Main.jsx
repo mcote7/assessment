@@ -18,22 +18,19 @@ const Main = () => {
     .catch(err => console.log(err))
   }, []);
 
-  const handleTagSearch = (e) => {
-    console.log("tag search val", e.target.value);
-    setTagSearchQuery(e.target.value);
-  };
+    // console.log("tagQuery", tagSearchQuery);
 
   return (
     <div className="mainContainer">
       <input id="name-input" type="text" className="myInput" placeholder="Search by name"
       onChange={(e)=>{setSearchQuery(e.target.value)}}/>
       <input id="tag-input" type="text" className="myInput" placeholder="Search by tag"
-      onChange={(e)=>{handleTagSearch(e)}}/>
+      onChange={(e)=>{setTagSearchQuery(e.target.value)}}/>
       <div className="studentList">
 
         {result && result.filter(res => res.firstName.concat(res.lastName).toLowerCase()
         .includes(searchQuery.toLocaleLowerCase()))
-        .map(res => <Student key={res.id} result={res} inputId={inputId++}/>)}
+        .map(res => <Student key={res.id} result={res} inputId={inputId++} tagSearchQuery={tagSearchQuery}/>)}
 
 
         {/* {result && result.filter(res => res.firstName.concat(res.lastName).toLowerCase()
