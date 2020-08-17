@@ -1,5 +1,6 @@
 {
   "name": "hatchways",
+  "author": "Michael Cote 8-16-2020",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
