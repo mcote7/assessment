@@ -47,8 +47,8 @@ const Student = ({result, inputId, tagSearchQuery}) => {
   const handleDelete = (e) => {
     const myTags = [...tags];
     const innerText = e.currentTarget.parentNode.innerText;
-    console.log("mytags", myTags);
-    console.log("innertext", innerText);
+    // console.log("mytags", myTags);
+    // console.log("innertext", innerText);
     if(myTags.includes(innerText)) {
       const res = _.pull(myTags, innerText);
       setTags(res);
