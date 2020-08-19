@@ -2,6 +2,7 @@
   "name": "hatchways",
   "author": "Michael Cote 8-16-2020",
   "version": "0.1.0",
+  "homepage": "http://mcote7.github.io/assessment",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
