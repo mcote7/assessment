@@ -36,7 +36,7 @@ const Student = ({result, inputId, tagSearchQuery}) => {
     let input = document.getElementById(`${inputId}`);
     let text = document.getElementById(`${inputId}`).value;
     const myTags = [...tags];
-    if(text !== "") {
+    if(text) {
       myTags.push(text);
       setTags(myTags);
       input.value = '';
@@ -47,6 +47,8 @@ const Student = ({result, inputId, tagSearchQuery}) => {
   const handleDelete = (e) => {
     const myTags = [...tags];
     const innerText = e.currentTarget.parentNode.innerText;
+    console.log("mytags", myTags);
+    console.log("innertext", innerText);
     if(myTags.includes(innerText)) {
       const res = _.pull(myTags, innerText);
       setTags(res);
@@ -83,7 +85,7 @@ const Student = ({result, inputId, tagSearchQuery}) => {
 
           {details ?
           <form onSubmit={(e)=> handleTags(e)}>
-            <input id={inputId} type="text" className="myTagInput" placeholder="Add a tag"/>
+            <input pattern="^[^\s].+[^\s]$" id={inputId} type="text" className="myTagInput" placeholder="Add a tag"/>
           </form>
           :''}
 
