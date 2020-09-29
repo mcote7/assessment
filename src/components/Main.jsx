@@ -30,6 +30,7 @@ const Main = () => {
     async function getStudents() {
       const results = await axios(API_ENDPOINT);
       setResult(results.data.students);
+      console.log("m", results.data.students)
       setLoading(false);
     }
     getStudents();
