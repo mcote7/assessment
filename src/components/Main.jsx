@@ -14,23 +14,11 @@ const Main = () => {
   const [tagSearchQuery, setTagSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // useEffect(()=> {
-  //   setLoading(true);
-  //   setTimeout(() => {
-  //   axios.get(API_ENDPOINT)
-  //   .then(res => {
-  //     setResult(res.data.students)})
-  //     .catch(err => console.log(err))
-  //     setLoading(false);
-  //   }, 1500);
-  // }, []);
-
   useEffect(()=> {
     setLoading(true);
     async function getStudents() {
       const results = await axios(API_ENDPOINT);
       setResult(results.data.students);
-      console.log("m", results.data.students)
       setLoading(false);
     }
     getStudents();
