@@ -36,7 +36,11 @@ const Student = ({result, inputId, tagSearchQuery}) => {
     let input = document.getElementById(`${inputId}`);
     let text = document.getElementById(`${inputId}`).value;
     const myTags = [...tags];
-    if(text) {
+    if(myTags.includes(text)) {
+      alert("No duplicate tags please!");
+      input.value = '';
+    }
+    if(text && !myTags.includes(text)) {
       myTags.push(text);
       setTags(myTags);
       input.value = '';
